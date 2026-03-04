@@ -4,6 +4,8 @@
 
 package mte2.deques;
 
+import java.util.Iterator; // needed to be imported so Iterator can be used
+
 // public class Deque {
 public interface Deque<E> extends Iterable<E> {
     
@@ -12,5 +14,11 @@ public interface Deque<E> extends Iterable<E> {
     public E dequeueFront();
     public E dequeueBack();
     public int size();    
+
+    // need to add the iterator
+    @Override
+    default Iterator<E> iterator() {
+        throw new UnsupportedOperationException("Unsupported Operation");
+    }
 
 }
